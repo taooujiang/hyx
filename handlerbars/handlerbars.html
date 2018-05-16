@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    <div class="content"></div>
+    <script type="text/javascript" src="./jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="./handlebars-v4.0.10.js"></script>
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="entry">
+        <h1>{{title}}</h1>
+        <div class="body">
+          {{body}}
+        </div>
+      </div>
+    </script>
+    <script>
+      $(function(){
+        var source = $("#entry-template").html();
+        var template = Handlebars.compile(source);
+        $(".content").html(template({title:"hello",body:"world"}));
+      })
+    </script>
+	</body>
+</html>

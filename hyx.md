@@ -284,3 +284,32 @@ form.js
 4. 为了解决问题，`ctrl+c`，`ctrl+v`，弄出一份新的js
 5. 维护起来，全局搜索某个字段，一改就是好多个js
 6. 同样的代码，在标准版，慧拨还得一模一样改一遍。容易遗漏不说，改的脑壳痛。
+
+前后端数据交互
+-----
+1. 异步请求，返回json，前端自己渲染页面内容
+返回页面，并且返回json格式数据。前端自己将json中的数据，渲染至页面
+2. 同步
+后台将页面里的数据渲染好后，整个页面返回
+
+hyx这个项目，初期所有的页面都是同步的，经几个版本更新，也只是将部分功能（主要是列表）改成异步。
+
+举个例子，慧营销-我的客户
+
+数据提交
+-----
+1. form submit
+```javascript
+document.form[0].submit()
+```
+
+2. ajax
+```javascript
+$.ajax({
+  type: get/post,
+  url: xxxxx,
+  data: {},//form.serialize()
+  success: function(){},
+  error: function(){}
+})
+```
